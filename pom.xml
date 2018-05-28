@@ -1,0 +1,176 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<name>product-quality-control</name>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>vn.sps</groupId>
+	<artifactId>product-quality-control</artifactId>
+	<version>1.0.22.23</version>
+
+	<properties>
+		<java.version>1.6</java.version>
+		<jai-legacy.version>1.0.0.LEGACY</jai-legacy.version>
+		<jai-image.version>1.0.0.LEGACY</jai-image.version>
+		<icepdf.version>1.0.0.LEGACY</icepdf.version>
+		<batik.version>1.0.0.LEGACY</batik.version>
+		<jai.version>1.1.2_01</jai.version>
+		<c3p0.version>0.9.1.2</c3p0.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<postgresql.version>9.1-902.jdbc4</postgresql.version>
+		<poi.version>3.8-beta4</poi.version>
+		<junidecode.version>0.1.1</junidecode.version>
+		<swing.version>1.0.0.LEGACY</swing.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-awt-util</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-dom</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-svg-dom</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-svggen</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-util</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-xml</artifactId>
+			<version>${batik.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.icepdf</groupId>
+			<artifactId>icepdf-core</artifactId>
+			<version>${icepdf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.icepdf</groupId>
+			<artifactId>icepdf-viewer</artifactId>
+			<version>${icepdf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.media</groupId>
+			<artifactId>jai_linux-i586</artifactId>
+			<version>${jai-legacy.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jai_windows-i586</groupId>
+			<artifactId>jai_windows-i586</artifactId>
+			<version>${jai-legacy.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.media</groupId>
+			<artifactId>jai_codec</artifactId>
+			<version>${jai.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.media</groupId>
+			<artifactId>jai_core</artifactId>
+			<version>${jai.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>xswingx</artifactId>
+			<version>${swing.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>sps.vn.vae2</groupId>
+			<artifactId>jai_imageio</artifactId>
+			<version>${jai-image.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3p0.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.moparisthebest</groupId>
+			<artifactId>junidecode</artifactId>
+			<version>${junidecode.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>PQC</finalName>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
