@@ -1,172 +1,104 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-	<name>product-quality-control</name>
-
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>vn.sps</groupId>
-	<artifactId>product-quality-control</artifactId>
-	<version>1.0.22.23</version>
-
+	<groupId>com.minhdo</groupId>
+	<artifactId>spring-boot-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<java.version>1.6</java.version>
-		<jai-legacy.version>1.0.0.LEGACY</jai-legacy.version>
-		<jai-image.version>1.0.0.LEGACY</jai-image.version>
-		<icepdf.version>1.0.0.LEGACY</icepdf.version>
-		<batik.version>1.0.0.LEGACY</batik.version>
-		<jai.version>1.1.2_01</jai.version>
-		<c3p0.version>0.9.1.2</c3p0.version>
-		<dom4j.version>1.6.1</dom4j.version>
-		<postgresql.version>9.1-902.jdbc4</postgresql.version>
-		<poi.version>3.8-beta4</poi.version>
-		<junidecode.version>0.1.1</junidecode.version>
-		<swing.version>1.0.0.LEGACY</swing.version>
+		<java.version>1.8</java.version>
 	</properties>
-
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.7.RELEASE</version>
+	</parent>
+	<name>spring-boot-demo Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
-
 		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-awt-util</artifactId>
-			<version>${batik.version}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-dom</artifactId>
-			<version>${batik.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-svg-dom</artifactId>
-			<version>${batik.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.3.5.RELEASE</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-svggen</artifactId>
-			<version>${batik.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.3.5.RELEASE</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-util</artifactId>
-			<version>${batik.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>4.3.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-xml</artifactId>
-			<version>${batik.version}</version>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.0.6.RELEASE</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.icepdf</groupId>
-			<artifactId>icepdf-core</artifactId>
-			<version>${icepdf.version}</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
-			<groupId>org.icepdf</groupId>
-			<artifactId>icepdf-viewer</artifactId>
-			<version>${icepdf.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.media</groupId>
-			<artifactId>jai_linux-i586</artifactId>
-			<version>${jai-legacy.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>jai_windows-i586</groupId>
-			<artifactId>jai_windows-i586</artifactId>
-			<version>${jai-legacy.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.media</groupId>
-			<artifactId>jai_codec</artifactId>
-			<version>${jai.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.media</groupId>
-			<artifactId>jai_core</artifactId>
-			<version>${jai.version}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.swinglabs</groupId>
-			<artifactId>xswingx</artifactId>
-			<version>${swing.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>${dom4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>sps.vn.vae2</groupId>
-			<artifactId>jai_imageio</artifactId>
-			<version>${jai-image.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>${c3p0.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.moparisthebest</groupId>
-			<artifactId>junidecode</artifactId>
-			<version>${junidecode.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>${poi.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgresql.version}</version>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180130</version>
 		</dependency>
 
 	</dependencies>
 	<build>
-		<finalName>PQC</finalName>
 		<plugins>
-
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<finalName>${project.artifactId}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<desdescriptor>${project.basedir}/src/assembly/assembly.xml</desdescriptor>
+					</descriptors>
 				</configuration>
 				<executions>
 					<execution>
-						<id>default-compile</id>
-						<phase>compile</phase>
+						<id>create-archive</id>
+						<phase>package</phase>
 						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>default-testCompile</id>
-						<phase>test-compile</phase>
-						<goals>
-							<goal>testCompile</goal>
+							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>
